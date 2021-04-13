@@ -1,0 +1,42 @@
+mat-slider {
+    width: 100%;
+}
+.products-list{
+    padding-top: 3rem;
+    background-image: radial-gradient(#d8d7d72c 20%, transparent 20%);
+    background-size: 30px 30px;
+}
+.page-item{
+    cursor: pointer;
+}
+.products-list:before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* background-image: url('../../../assets/images/dots.png'); */
+    /* opacity: 0.3; */
+    min-height: 200vh;
+}
+.collection-header{
+    background-color: #F8F8F8;
+    width: 100vw;
+    font-size: 1.2rem;
+    margin: 0;
+}
+.breadcrumb{
+    background-color: transparent;
+    font-size: 1.2rem;
+}
+.breadcrumb .breadcrumb-item{
+    cursor: pointer;
+}
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: blue; /*replace with your color*/
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: skyblue;  /*replace with your color*/
+}

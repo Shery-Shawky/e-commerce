@@ -1,0 +1,25 @@
+<section id="forgetpw">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2><i class="far fa-check-circle"></i> Confirm Your Email</h2>
+                <form [formGroup]="myForm">
+                    <div class="form-group">
+                      <input type="text" appFormValidation="{{isvalidEmail}}" placeholder="Email" (input)="onChange()"
+                        formControlName="email" name="email" class="form-control rounded-0" required>
+              
+                      <div *ngIf="myForm.controls.email.errors && myForm.controls.email.touched" class="error text-danger">
+                        <p *ngIf="myForm.controls.email.errors.required">email is Required</p>
+                        <p *ngIf="myForm.controls.email.errors.pattern">invalid email</p>
+                      </div>
+
+                    </div>
+                    <p>{{alerterr}}</p>
+                    <div class="form-group">
+                      <button (click)="sendEmail($event)" type="button" class="btn btn-info rounded-0">Send</button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+</section>

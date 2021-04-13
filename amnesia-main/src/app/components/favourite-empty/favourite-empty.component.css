@@ -1,0 +1,17 @@
+#favouriteEmpty .img{
+    text-align: center;
+    margin-top: 4rem;
+}
+#favouriteEmpty .img img{
+    width: 300px;
+}
+#favouriteEmpty h2{
+    text-align: center;
+    font-size: 2rem;
+    color: #1D1D1D;
+}
+#favouriteEmpty {
+    text-align: center;
+    color: #F65B5F;
+    cursor: pointer;
+}

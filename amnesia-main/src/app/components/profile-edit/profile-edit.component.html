@@ -1,0 +1,210 @@
+<div id="profile-edit" class="container">
+    <div class="row  justify-content-center">
+        <form [formGroup]="myForm" *ngIf="!isFetching && !isError" enctype="multipart/form-data" method="POST">
+            <div class="form-row">
+                <div class="col-md-12 mb-3">
+                    <img [src]="profImage">
+                    <label for="img">
+                        <i class="fas fa-2x fa-camera-retro"></i>
+                    </label>
+                    <input type="file" id="img" (change)="onUpload($event)">
+                    <div class="lds-ellipsis" *ngIf="isFetchingImg">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <!-- first name -->
+                <div class="col-md-5 mb-3">
+                    <label for="firstname">First name</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="firstname" placeholder="First name" name="firstname"
+                            formControlName="firstname" required>
+                        <div *ngIf="myForm.controls.firstname.errors && myForm.controls.firstname.touched"
+                            class="error text-danger">
+                            <p *ngIf="myForm.controls.firstname.errors.required">Name is Required</p>
+                            <p *ngIf="myForm.controls.firstname.errors.maxlength">Name must be less than 8 characters</p>
+
+                            <p *ngIf="myForm.controls.firstname.errors.minlength">Name must be more than 3 characters</p>
+                            <p *ngIf="myForm.controls.firstname.errors.pattern">Name must be characters only</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- last name -->
+                <div class="col-md-5 mb-3 offset-md-1">
+                    <label for="lastname">Last name</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="lastname">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control"
+                             id="lastname" placeholder="Last name" name="lastname"
+                            formControlName="lastname" required>
+
+                        <div *ngIf="myForm.controls.lastname.errors &&  myForm.controls.lastname.touched" class="error text-danger">
+                            <p *ngIf="myForm.controls.lastname.errors.required">Name is Required</p>
+                            <p *ngIf="myForm.controls.lastname.errors.maxlength">Name must be less than 8 characters</p>
+                            <p *ngIf="myForm.controls.lastname.errors.minlength">Name must be more than 3 characters</p>
+
+                            <p *ngIf="myForm.controls.lastname.errors.pattern">Name must be characters only</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- email -->
+                <div class="col-md-5 mb-3">
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="email">
+                                <i class="fas fa-at"></i>
+                            </span>
+                        </div>
+                        <input type="email" class="form-control" 
+                             id="email" placeholder="email" name="email" formControlName="email"
+                            required>
+                        <div *ngIf="myForm.controls.email.errors && myForm.controls.email.touched" class="error text-danger">
+                            <p *ngIf="myForm.controls.email.errors.required">email is Required</p>
+                            <p *ngIf="myForm.controls.email.errors.pattern">invalid email</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- phone -->
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <label for="phone">Phone Number</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="username">
+                                <i class="fas fa-phone"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control"
+                             id="phone" placeholder="phone" name="phone" formControlName="phone"
+                            required>
+                        <div *ngIf="myForm.controls.phone.errors && myForm.controls.phone.touched" class="error text-danger">
+                            <p *ngIf="myForm.controls.phone.errors.required">phone is Required</p>
+                            <p *ngIf="myForm.controls.phone.errors.pattern">phone must be numbers only</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- gender -->
+                <div class="col-md-5  mb-3">
+                    <label for="gender">Gender</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="gender">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+                        <select class="form-control" appValidationCorrect (change)="onChange($event.target.value)">
+                            <option selected>{{myForm.value.gender}}</option>
+                            <option *ngFor="let element of gender" value="{{element}}">{{element}}</option>
+                        </select>
+                        <div *ngIf="myForm.controls.gender.errors && myForm.controls.gender.touched" class="error text-danger">
+                            <p *ngIf="myForm.controls.gender.errors.required">Gender is Required</p>
+                            <p *ngIf="myForm.controls.gender.errors.maxlength">Gender must be characters only</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- password -->
+                <div class="col-md-5 mb-3 offset-md-1">
+                    <label for="password">Verify Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-key"></i>
+                            </span>
+                        </div>
+                        <input type="password" class="form-control"
+                            
+                            id="password" placeholder="password" name="password" formControlName="password" required>
+
+                        <div *ngIf="myForm.controls.password.errors && myForm.controls.password.touched" class="error text-danger">
+                            <p *ngIf="myForm.controls.password.errors.required">password is Required</p>
+                            <div *ngIf="passwordErr=='show'">
+                                <p [class]="passwordErr">invalid password</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- country -->
+                <div class="col-md-5 mb-3">
+                    <label for="city">Country</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="country">
+                                <i class="fas fa-city"></i>
+                            </span>
+                        </div>
+                        <input type="country" class="form-control"
+                             id="country"
+                            placeholder="country" name="country" formControlName="country" required>
+                       
+                        <div *ngIf="myForm.controls.country.errors && myForm.controls.country.touched" class="error text-danger">
+                            <p *ngIf="myForm.controls.country.errors.required">country is Required</p>
+                            <p *ngIf="myForm.controls.country.errors.city">country must be characters only</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- city -->
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <label for="city">City</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-city"></i>
+                            </span>
+                        </div>
+                        <input type="city" class="form-control" 
+                         id="city" placeholder="city" name="city" formControlName="city" required>
+                        <div *ngIf="myForm.controls.city.errors && myForm.controls.city.touched" class="error text-danger">
+                            <p *ngIf="myForm.controls.city.errors.required">country is Required</p>
+                            <p *ngIf="myForm.controls.city.errors.pattern">city must be characters only</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- street -->
+                <div class="col-md-5 mb-3">
+                    <label for="street">Street</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-city"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" 
+                             id="street" placeholder="street" name="street" formControlName="street"
+                            required>
+                        <div *ngIf="myForm.controls.street.errors && myForm.controls.street.touched" class="error text-danger">
+                            <p *ngIf="myForm.controls.street.errors.required">street is Required</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn rounded-0" id="editProfileBtn" type="submit" 
+            [disabled] = "myForm.invalid"
+            (click)="saveChanges()"><i
+                    class="fas fa-save"></i> Save
+                Changes</button>
+            <button class="btn rounded-0" id="deleteProfileBtn" type="submit" (click)="deleteAccount()"><i
+                    class="far fa-trash-alt"></i> Delete Account
+            </button>
+        </form>
+        <div *ngIf="isFetching && !isError">
+            <mat-spinner class="loading"></mat-spinner>
+        </div>
+        <div *ngIf="!isFetching && isError">
+            <div class="text-danger alert-danger error"><i class="fas fa-exclamation-triangle text-danger"></i>
+                Something Went Wrong</div>
+        </div>
+    </div>
+</div>

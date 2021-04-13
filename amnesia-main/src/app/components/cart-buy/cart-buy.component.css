@@ -1,0 +1,93 @@
+#cart-buy{
+    background-color:#F3F4FA;
+    margin: 0;
+    padding: 0;
+}
+#cart-buy[_ngcontent-mot-c70] form[_ngcontent-mot-c70]{
+    background-color: #F65B5F;
+}
+.cart-buy2{
+    background-image: url("../../../assets/images/pexels-photo-2536965.jpeg");
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:right;
+}
+#cart-buy form{
+    padding: 30px 0px 30px 0px;
+    /* display: none; */
+}
+#cart-buy h2{
+    color: #F65B5F;
+}
+#cart-buy input, #cart-buy select{
+    border: none;
+    border-bottom: 1px solid #F65B5F;
+    background-color: transparent;
+}
+#cart-buy textarea{
+    border: 1px solid #F65B5F;
+    background-color: transparent;
+
+}
+#cart-buy input:focus, #cart-buy select:focus, #cart-buy textarea:focus{
+    box-shadow: none;
+}
+#cart-buy h3{
+    color: #F65B5F;
+    background-color: #FFFFFF;
+    color: #F65B5F;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    right: -210px;
+    bottom: -35px;
+    z-index: 1;
+    border: 2px solid #F65B5F;
+}
+#cart-buy option:hover{
+    background-color: #F65B5F;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+#cart-buy button#buy{
+    background-color: #FFFFFF;
+    outline: none;
+    border: 1px solid #F65B5F;
+    background-image: 
+      linear-gradient(to top, hsl(0, 0%, 100%) 50%, #F65B5F 50%),
+      linear-gradient(to top, #F65B5F 50%, transparent 50%);
+    -webkit-background-clip: text,padding-box;
+    background-clip: text,padding-box;
+    -webkit-text-fill-color: transparent;
+    color: transparent;  
+    background-size: 100% 200%;
+    background-position: top;
+    transition: background-position 0.5s ease-in-out;
+}
+#cart-buy button#buy:hover{
+    background-position: bottom;
+}
+
+
+#cart-buy #orderSuccess{
+    height: 100vh;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+#cart-buy #orderSuccess h2{
+    font-size: 2rem;
+    padding: 20px;
+    color: #1B1B1B;
+}
+#cart-buy #orderSuccess i{
+    color: #F65B5F;
+}
+#cart-buy #orderSuccess .returnHome{
+    width: 30%;
+    margin: 0 auto;
+}

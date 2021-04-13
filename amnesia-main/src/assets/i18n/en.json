@@ -1,0 +1,104 @@
+{
+	"beauty": {
+		"beauty": "Beauty",
+		"desc": "Find the best skincare products for all skin types with best quality."
+	},
+	"cart": {
+		"CartTotalPrice": "Cart Total Price",
+		"FNamemustbelessthanEightcharacters": "First Name must be less than 8 characters",
+		"LNamemustbelessthanEightcharacters": "Last Name must be less than 8 characters",
+		"Namemustbecharactersonly": "Name must be characters only",
+		"confirmOrder": "Confirm Order",
+		"continueShopping": "Continue Shopping",
+		"count": "Count",
+		"image": "Image",
+		"mycart": "My Cart",
+		"price": "Price",
+		"product": "Product",
+		"remove": "Remove"
+	},
+	"cartBuy": {
+		"BuyNow": "Buy now",
+		"GoHome": "Go Home",
+		"LNameisRequired": "Last name is required",
+		"NameisRequired": "Name is required",
+		"OrderSentSuccessfully": "Order Sent Successfully",
+		"countryisRequired": "Country is required",
+		"countrymustbecharactersonly": "country must be characters only",
+		"orderDetails": "Order Details",
+		"phoneisRequired": "Phone is Required",
+		"phonemustbenumbersonly": "phone must be numbers only"
+	},
+	"cartempty": {
+		"ContinueShopping": "Continue Shopping"
+	},
+	"contact": {
+		"emailAd": "Enter your email",
+		"message": "Enter your message",
+		"name": "Enter your name",
+		"phone": "Enter your phone",
+		"subject": "Enter the subject"
+	},
+	"contactus": {
+		"emailInV": "Email is invalid",
+		"header": "Contact Us",
+		"messageReq": "Message is required",
+		"phoneReq": "Phone is required",
+		"sendBtm": "Send",
+		"subjectReq": "Subject is required",
+		"usernameReq": "Username is Required"
+	},
+	"footer": {
+		"storeInfo": "Store Information"
+	},
+	"home": {
+		"aboutus1": "The makeup accumulation includes backstage excellence and regular.",
+		"aboutusTitle": "Egypt Cosmetics is the result of owners hardwork, big name makeup craftsman and restorative aesthetician.",
+		"ourProfessionalTeam": "Our Professional Team",
+		"products": "Our Featured Products",
+		"sales": "Sales",
+		"shopnow": "Shop Now!",
+		"shopnow2": "just as a wide cluster of strikingly lively shades that are all cold.",
+		"shopnow3": "hypoallergenic, sun-assurance figured, eco-accommodating, fit.",
+		"shopnow4": "It is a long established fact that a distracted.",
+		"testiOfClients": "Testimonials of Our Clients"
+	},
+	"menu": {
+		"title": "Menu"
+	},
+	"navbar": {
+		"about": "About us",
+		"contactus": "Contact us",
+		"home": "Home",
+		"language": "Language",
+		"login": "Login",
+		"logout": "Logout",
+		"products": "Products",
+		"profile": "my profile",
+		"register": "Register"
+	},
+	"prodCard": {
+		"knowMoreBtn": "Know more"
+	},
+	"prodList": {
+		"found": "found",
+		"noSearchIsMatch": "No searches is matching",
+		"of": "of",
+		"priceRange": "Range of prices",
+		"prodOfSales": "Sales products",
+		"results": "Results",
+		"showingProducts": "Showing products"
+	},
+	"prodView": {
+		"description": "Description",
+		"noOfReviews": "{{reviews}} Reviews",
+		"prodRating": "Product rating {{rating}} / 5",
+		"yourRating": "Your rating {{uRating}} / 5"
+	},
+	"product": {
+		"MoreDetails": "More Details"
+	},
+	"welcome": {
+		"slogan": "We have the best products"
+	}
+}

@@ -1,0 +1,84 @@
+#profile{
+    display: flex;
+}
+#profile .navbar{
+    padding: 0;
+}
+#profile .navbar-expand-lg .navbar-collapse{
+    flex-direction: column;
+    align-items: initial;
+}
+#profile .navbar-light .navbar-toggler {
+    position: fixed;
+    /* top: 100px;
+    left: 10px; */
+    top: 80px;
+    right: 10px;
+}
+#profile aside{
+    /* width: 20%; */
+    min-height: 100vh;
+    display: block;
+    background-color: #5d5d5d25;
+}
+#profile .img{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+#profile p{
+    text-align: center;
+    border-bottom: 2px solid #F65B5F;
+    margin: 0px 40px 0px 40px;
+    padding-bottom: 10px;
+    font-size: 1.3rem;
+}
+#profile .img img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 0 5px #F65B5F;
+}
+#profile ul{
+    list-style: none;
+    margin-top: 30px;
+    padding-left: 0px;
+    color: #5D5D5D;
+    width: 100%;
+    text-indent: 20px;
+}
+#profile li{
+    padding: 5px;
+    margin-bottom: 15px;
+}
+#profile ul .active{
+    border-right: 4px solid #F65B5F;
+    color: #1B1B1B;
+    color: #F65B5F;
+}
+#profile li:hover{
+    cursor: pointer;
+    text-indent: 30px;
+    color: #F65B5F;
+    transition: ease-in-out .4s;
+}
+
+
+/************/
+#profile .container{
+    /* width: 70%; */
+    padding-left: 50px;
+    margin: 0 auto;
+    min-height: 100vh;
+    align-self: flex-end;
+    /* float: right; */
+
+    background-image: radial-gradient(#d8d7d72c 20%, transparent 20%);
+    background-size: 30px 30px;
+}
+/*****************/
+#profile-orders,
+#profile-order-details{
+    display:none ;
+}

@@ -1,0 +1,104 @@
+{
+	"beauty": {
+		"beauty": "الجمال",
+		"desc": "اعثر على أفضل منتجات العناية بالبشرة لجميع أنواع البشرة بأفضل جودة."
+	},
+	"cart": {
+		"CartTotalPrice": "مجمل سعر منتجات العربة",
+		"FNamemustbelessthanEightcharacters": "الاسم الاول يجب ان يكون 8 حروف ع الاكثر",
+		"LNamemustbelessthanEightcharacters": "الاسم الاخير يجب ان يكون 8 حروف ع الاكثر",
+		"Namemustbecharactersonly": "الاسم يجب ان يكون حروف فقط",
+		"confirmOrder": "تاكيد الطلب",
+		"continueShopping": "استكمال التسوق",
+		"count": "العدد",
+		"image": "الصورة",
+		"mycart": "عربتي",
+		"price": "السعر",
+		"product": "المنتج",
+		"remove": "حذف"
+	},
+	"cartBuy": {
+		"BuyNow": "اشتري الان",
+		"GoHome": "عودة للرئيسية",
+		"LNameisRequired": "الاسم الاخير ضروري",
+		"NameisRequired": "الاسم ضروري",
+		"OrderSentSuccessfully": "تم ارسال الطلب بنجاح",
+		"countryisRequired": "رقم",
+		"countrymustbecharactersonly": "اسم المدينة يجب ان يكون حروف فقط",
+		"orderDetails": "وصف الاوردر",
+		"phoneisRequired": "رقم الهاتف يجب اضافته",
+		"phonemustbenumbersonly": "رقم الهاتب ارقام فقط"
+	},
+	"cartempty": {
+		"ContinueShopping": "استكمال التسوق"
+	},
+	"contact": {
+		"emailAd": "اكتب اميلك",
+		"message": "اكتب رسالتك",
+		"name": "اكتب اسمك",
+		"phone": "رقم الهاتف",
+		"subject": "موضوع الرسالة"
+	},
+	"contactus": {
+		"emailInV": "الاميل غير صحيح",
+		"header": "تواصل معنا",
+		"messageReq": "يجب ان تضيف رسالتك",
+		"phoneReq": "يجب ان تضيف رقم الهاتف",
+		"sendBtm": "ارسل رسالتك",
+		"subjectReq": "ضع موضوع الرسالة",
+		"usernameReq": "اسم المستخدم مطلوب"
+	},
+	"footer": {
+		"storeInfo": "معلومات عن المخزن"
+	},
+	"home": {
+		"aboutus1": "يتضمن تراكم الماكياج التميز وراء الكواليس والمنتظم.",
+		"aboutusTitle": "مصر لمستحضرات التجميل هي نتيجة عمل أصحابها الجاد ، وصانع المكياج ذو الأسماء الكبيرة وخبير التجميل الترميمي.",
+		"ourProfessionalTeam": "من نحن",
+		"products": "منتجاتنا المميزة",
+		"sales": "عروض مميزة",
+		"shopnow": "تسوق الان",
+		"shopnow2": "تمامًا مثل مجموعة واسعة من الظلال الحيوية اللافتة للنظر وجميعها باردة.",
+		"shopnow3": "هيبوالرجينيك ، تحسب للشمس ، ملائمة للبيئة ، مناسبة.",
+		"shopnow4": "إنها حقيقة مثبتة منذ زمن طويل وهي أن مشتت الانتباه.",
+		"testiOfClients": "شهادات من عملائنا"
+	},
+	"menu": {
+		"title": "القائمة"
+	},
+	"navbar": {
+		"about": "من نحن",
+		"contactus": "توصل معنا",
+		"home": "الرئيسية",
+		"language": "اللغة",
+		"login": "تسجيل الدخول",
+		"logout": "تسجيل الخروج",
+		"products": "المنتجات",
+		"profile": "الصفحة الشخصية",
+		"register": "تسجيل"
+	},
+	"prodCard": {
+		"knowMoreBtn": "اعرف اكثر"
+	},
+	"prodList": {
+		"found": "موجودة",
+		"noSearchIsMatch": "لا يوجد امثلة مماثلة للبحث",
+		"of": "من ",
+		"priceRange": "مدى الاسعار",
+		"prodOfSales": "عروض على منتجات",
+		"results": "نتائج",
+		"showingProducts": "عرض منتجات"
+	},
+	"prodView": {
+		"description": "وصف المنتج",
+		"noOfReviews": "{{reviews}} عدد التقيمات",
+		"prodRating": "{{rating}} / 5  تقييم المنتج",
+		"yourRating": "{{uRating}}/5 ضع تقييما"
+	},
+	"product": {
+		"MoreDetails": "تفاصيل اكثر"
+	},
+	"welcome": {
+		"slogan": "لدينا كل افضل منتجات"
+	}
+}

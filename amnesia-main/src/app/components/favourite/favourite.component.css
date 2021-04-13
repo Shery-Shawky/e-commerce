@@ -1,0 +1,113 @@
+/* favourite */
+#favourite{
+    padding-bottom: 30px;
+    /* padding-top: 50px;
+    height: 100vh;
+    background-color:#F3F4FA; */
+}
+
+#favourite h2{
+    padding-top: 2rem;
+    font-size: 1.5rem;
+}
+#favourite .favourites table{
+    text-align: center;
+    color: #1B1B1B;
+    background-image: radial-gradient(#d8d7d74d 20%, transparent 20%);
+    background-size: 30px 30px;
+}
+#favourite .favourites table thead{
+    background-color: #F65B5F;
+    color: #FFFFFF;
+    box-shadow: 5px 5px 5px #95959595;
+}
+#favourite .favourites table td{
+    vertical-align: middle;
+}
+#favourite .favourites img{
+    width: 100px;
+    height: 100px;
+}
+#favourite .favourites table i.fa-trash-alt{
+    color: #F65B5F;
+    font-size: 1.5rem;
+}
+#favourite .favourites table i.fa-trash-alt:hover{
+    cursor:pointer;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+#favourite .fa-minus , #favourite .fa-plus{
+    color: #1B1B1B;
+    padding: 0px 15px;
+}
+#favourite .fa-minus:hover ,
+#favourite .fa-plus:hover{
+     cursor: pointer;
+     /* color: #F65B5F; */
+     transform: scale(1.1);
+     transition: ease-in-out ;
+ }
+/* animation */
+@keyframes shake{ 
+    0%{ 
+      transform: rotate(0);
+    } 
+    25%{ 
+        transform: rotate(20deg);
+    }   
+    50%{ 
+        transform: rotate(-20deg);
+    } 
+    100%{ 
+        transform: rotate(0);
+    } 
+}
+/* cart img */
+#favourite .img{
+    text-align: center;
+    margin: 20px;
+}
+#favourite .img h2{
+    color: #F65B5F;
+    /* text-shadow: 3px 3px 3px #959595; */
+}
+/* favourite info */
+#carfavouritet .favouritesInfo .col-sm-6{
+    width: 50%;
+}
+#favourite .fa-arrow-left{
+    color: #F65B5F;
+}
+#favourite .fa-arrow-left:hover{
+    cursor: pointer;
+    margin-left: -20px;
+    transition: ease-in-out .5s;
+}
+#favourite .favouritesInfo .total{
+    text-align: end;
+}
+#favourite .favouritesInfo .total h4{
+    color: #F65B5F;
+}
+#favourite .favouritesInfo .total p{
+    color: #1B1B1B;
+}
+#favourite .favouritesInfo .total #buyNow{
+    background-color: #FFFFFF;
+    outline: none;
+    border: 1px solid #F65B5F;
+    background-image: 
+      linear-gradient(to top, hsl(0, 0%, 100%) 50%, #F65B5F 50%),
+      linear-gradient(to top, #F65B5F 50%, transparent 50%);
+    -webkit-background-clip: text,padding-box;
+    background-clip: text,padding-box;
+    -webkit-text-fill-color: transparent;
+    color: transparent;  
+    background-size: 100% 200%;
+    background-position: top;
+    transition: background-position 0.5s ease-in-out;
+}
+#favourite .favouritesInfo .total #buyNow:hover{
+    background-position: bottom;
+}

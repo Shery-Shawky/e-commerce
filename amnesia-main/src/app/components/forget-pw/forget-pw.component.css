@@ -1,0 +1,42 @@
+#forgetpw{
+    padding-top: 4rem;
+    display: grid;
+    height: 80vh;
+    justify-content: center;
+    background-image: radial-gradient(#d8d7d72c 20%, transparent 20%);
+    background-size: 30px 30px;
+}
+/* #forgetpw h2{
+    display: grid;
+    justify-content: center;
+} */
+#forgetpw i{
+    color: #F65B5F;
+}
+#forgetpw p{
+    color: red;
+}
+#forgetpw button{
+    background-color: #FFFFFF;
+    outline: none;
+    border: 1px solid #F65B5F;
+    background-image: 
+      linear-gradient(to top, hsl(0, 0%, 100%) 50%, #F65B5F 50%),
+      linear-gradient(to top, #F65B5F 50%, transparent 50%);
+    -webkit-background-clip: text,padding-box;
+    background-clip: text,padding-box;
+    -webkit-text-fill-color: transparent;
+    color: transparent;  
+    background-size: 100% 200%;
+    background-position: top;
+    transition: background-position 0.5s ease-in-out;
+    outline: none;
+    box-shadow: none;
+}
+#forgetpw button:hover{
+    background-position: bottom;
+}
+#forgetpw .form-group {
+    text-align: center;
+    margin-bottom: 0rem;
+}

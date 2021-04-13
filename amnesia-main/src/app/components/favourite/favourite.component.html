@@ -1,0 +1,42 @@
+<section id="favourite">
+    <div class="container">
+        <div class="row img">
+            <div class="col-lg-12">
+                <h2>My Favoutrite Products</h2>
+            </div>
+        </div>
+        <div class="row">
+            <!-- table cart -->
+            <div class="col-lg-12 favourites">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of user; index as i">
+                            <td ><img [src]="'https://amnesia-skincare.herokuapp.com/api/images/show/'+product.image"></td>
+                            <!-- <td>img</td> -->
+                            <td>{{product.name}}</td>
+                            <td>{{product.current_price}}</td>
+                            <td><i class="fas fa-trash-alt" (click)="deleteProduct(i,product._id)"></i></td>                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <!-- total price -->
+        <div class="row favouritesInfo">
+            <div class="col-sm-6">
+                <div class="row">
+                    <i class="fas fa-arrow-left" [routerLink]="['/productList']"> Continue Shopping</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

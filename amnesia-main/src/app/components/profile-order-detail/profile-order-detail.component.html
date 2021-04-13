@@ -1,0 +1,61 @@
+<section id="orderDetail">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 title">
+                <h2>Order Details</h2>
+            </div>
+            <div class="col-lg-12">
+                <!-- table products -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let items of namesArr; index as i">
+                            <td>{{namesArr[i]}}</td>
+                            <td>{{quantityArr[i]}}</td>
+                            <td>{{currPriceArr[i]*quantityArr[i]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- table price -->
+                <table class="table2">
+                    <tbody  *ngIf="!isFetching">
+                        <tr>
+                            <td>Subtotal:</td>
+                            <td class="tdRight">$ {{totalCurrPriceArr}}</td>
+                        </tr>
+                        <tr>
+                            <td>Discount:</td>
+                            <td class="tdRight">$ 0</td>
+                            <!-- <td class="tdRight">$ {{totalCurrPriceArr - totalOldPriceArr}}</td> -->
+                        </tr>
+                        <!-- <tr>
+                            <td>Shipping:</td>
+                            <td class="tdRight">EGP1800</td>
+                        </tr> -->
+                        <tr>
+                            <td>Total:</td>
+                            <td class="tdRight">$ {{totalCurrPriceArr}}</td>
+                        </tr>
+                        <tr>
+                            <td>Payment method:</td>
+                            <td class="tdRight">{{payment}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div  *ngIf="isFetching">
+                    <mat-spinner class="loading"></mat-spinner>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <i class="fas fa-arrow-left" [routerLink]="['/profile']"> Back To Orders</i>
+            </div>
+        </div>
+    </div>
+</section>

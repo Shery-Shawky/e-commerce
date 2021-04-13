@@ -1,0 +1,95 @@
+.fa-icon{
+  color: gold;
+}
+.faStar{
+  display: block;
+}
+.buttons{
+  position: absolute;
+  top: 100px;
+  right: 0;
+  z-index: 4;
+}
+.hide{
+  display: none;
+}
+.button_slide {
+  border: 2px solid #F65B5F;
+  color: #F65B5F;
+  width: 100%;
+  border-radius: 0px;
+  display: inline-block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #F65B5F;
+  -webkit-transition: ease-out 0.5s;
+  -moz-transition: ease-out 0.5s;
+  transition: ease-out 0.5s;
+}
+
+.slide_right:hover {
+  box-shadow: inset 18rem 0 0 0 #F65B5F;
+  color: #FFF;
+}
+.badge{
+  position: absolute;
+  font-size: 1.5rem;
+  z-index: 3;
+  left: 10px;
+  transform: rotate(-20deg)
+}
+.card-title{
+  font-size: 1.3rem;
+}
+
+.current-price{
+  font-size: 1.5rem;
+}
+.old-price{
+  text-decoration: line-through;
+}
+.options-appear{
+  border:2px #F65B5F; 
+  position: absolute;
+  top: 200px;
+  left: 20%;
+  opacity: 1;
+  transition: 0.7s all;
+  cursor: pointer;
+}
+.options-disappear{
+  opacity: 0;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  transition: 0.7s all;
+  pointer-events: none;
+}
+
+.fav-appear{
+  border:2px #F65B5F; 
+  position: absolute;
+  top: 100px;
+  right: 25px;
+  opacity: 1;
+  transition: 0.7s all;
+  cursor: pointer;
+}
+.fav-disappear{
+  opacity: 0;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  transition: 0.7s all;
+  pointer-events: none;
+}
+img{
+  /* width: 250px; */
+  height: 250px;
+}
+.badge{
+  left: 0px;
+}
+/*-----------------------------------------------------------------------*/

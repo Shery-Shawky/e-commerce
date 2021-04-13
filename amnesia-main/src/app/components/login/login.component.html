@@ -1,0 +1,32 @@
+<body>
+  <div class="login-form">
+    <form [formGroup]="myForm">
+      <h2 class="text-center">Login</h2>
+      <div class="error text-danger">
+        <p>{{errMsg}}</p>
+      </div>
+      <div class="form-group">
+        <input type="text" appFormValidation="{{isvalidEmail}}" placeholder="Email" (input)="onChange()"
+          formControlName="email" name="email" class="form-control rounded-0" required>
+
+        <div *ngIf="myForm.controls.email.errors && myForm.controls.email.touched" class="error text-danger">
+          <p *ngIf="myForm.controls.email.errors.required">email is Required</p>
+          <p *ngIf="myForm.controls.email.errors.pattern">invalid email</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="password" appFormValidation="{{isvalidPassword}}" (input)="onChange()" name="password"
+          formControlName="password" class="form-control rounded-0" placeholder="password" required>
+
+        <div *ngIf="myForm.controls.password.errors && myForm.controls.password.touched" class="error text-danger">
+          <p *ngIf="myForm.controls.password.errors.required">password is Required</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <button (click)="loginUser()" type="button" class="btn btn-lg btn-block rounded-0">Log in</button>
+      </div>
+      <p><a routerLink="/forgetPassword">Forget your Password?</a></p>
+    </form>
+    <p class="text-center small">Don't have an account? <a routerLink="/register">Sign up here!</a></p>
+  </div>
+</body>

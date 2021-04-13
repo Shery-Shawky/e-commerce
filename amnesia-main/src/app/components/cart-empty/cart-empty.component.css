@@ -1,0 +1,28 @@
+#cart-empty{
+    text-align: center;
+}
+#cart-empty img{
+    width: 450px;
+}
+#cart-empty img, #cart-empty button{
+    display: block;
+    margin: 0 auto;
+}
+#cart-empty button{
+    background-color: #FFFFFF;
+    outline: none;
+    border: 1px solid #F65B5F;
+    background-image: 
+      linear-gradient(to top, hsl(0, 0%, 100%) 50%, #F65B5F 50%),
+      linear-gradient(to top, #F65B5F 50%, transparent 50%);
+    -webkit-background-clip: text,padding-box;
+    background-clip: text,padding-box;
+    -webkit-text-fill-color: transparent;
+    color: transparent;  
+    background-size: 100% 200%;
+    background-position: top;
+    transition: background-position 0.5s ease-in-out;
+}
+#cart-empty button:hover{
+    background-position: bottom;
+}

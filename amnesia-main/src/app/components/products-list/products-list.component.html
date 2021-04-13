@@ -1,0 +1,86 @@
+<div class="container-fluid products-list">
+   <div class="container filter-panel">
+      <div class="row">
+         <div class="col-md-12 col-sm-12" >
+            <ul class="list-group row rounded-0">
+               <li class="list-group-item text-center" style="color:#F65B5F ">{{'prodList.showingProducts' | translate}}
+                  {{skipGlobal+1}}-{{skipGlobal+obj?.length}} {{'prodList.of' | translate}} {{noOfProducts}} {{'prodList.results' | translate}}</li>
+            </ul>
+            <ul class="list-group row list-group-horizontal rounded-0">
+               <li class="list-group-item col-4  rounded-0">
+                  <ul class="list-group row rounded-0">
+                     <li class="list-group-item text-center border-0" style="color:#F65B5F ">{{'prodList.priceRange' | translate}}</li>
+                  </ul>
+                  <ul class="list-group list-group-horizontal row  rounded-0">
+                     <li class="list-group-item col-6 p-0 pl-1 border-0 text-left" style="color:rgb(219, 78, 83) ">$0
+                     </li>
+                     <li class="list-group-item col-6 p-0 pr-1 border-0 text-right" style="color:rgb(219, 77, 82) ">$100
+                     </li>
+                     <li class="list-group-item col-12 border-0 p-0">
+                        <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="0.5" min="0"
+                           (input)="slider($event)" max="100"></mat-slider>
+                     </li>
+                  </ul>
+               </li>
+               <li class="list-group-item col-4 rounded-0">
+                  <div class="input-group ">
+                     <div class="col-12 ">
+                        <input type="text" class="form-control"
+                           style="height: calc( 2rem );color:black;font-size:large;font-weight:bold" name="searching"
+                           #name=ngModel [(ngModel)]="pname" placeholder="search for name " aria-label="Search"
+                           aria-describedby="basic-addon2" (keyup)="searchForName()" style="margin-top: 30px ">
+                     </div>
+                  </div>
+
+               </li>
+               <li class="list-group-item col-4 rounded-0">
+                  <h5 style="color:#F65B5F ">{{'prodList.prodOfSales' | translate}}</h5>
+                  <input type="checkbox" [(ngModel)]="isChecked" (change)="changeSale()"
+                     style="margin-left: 50%;margin-top: 7%;border-radius: 50%" />
+               </li>
+            </ul>
+            <div class="container row m-auto cards" *ngIf="appear">
+               <app-product-card [objectOfInputs]="obj[i]" [favorites]="allFavorites" class="col-md-4 col-sm-6 col-xm-12"
+                  *ngFor="let ob of obj; index as i;"></app-product-card>
+            </div>
+            <div class="container row m-auto cards" *ngIf="obj.length==0 && pname.length != 0">
+               <h2 class="text-center mt-2 ">{{'prodList.noSearchIsMatch' | translate}} '{{pname}}' {{'prodList.found' | translate}}</h2>
+            </div>
+            <div class="container text-center" *ngIf="obj.length==0 && pname.length == 0">
+               <h2 class=""> Empty </h2>
+            </div>
+         </div>
+         <div class="col-12 text-center p-5" *ngIf="loading">
+            <div class="spinner-border text-primary" role="status">
+               <span class="sr-only">Loading...</span>
+            </div>
+         </div>
+      </div>
+   </div>
+
+</div>
+
+
+<div class="col-12" *ngIf="appear">
+   <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+         <li class="page-item">
+            <a class="page-link" (click)="prevPag()" aria-label="Previous">
+               <span aria-hidden="true">&laquo;</span>
+               <span class="sr-only">Previous</span>
+            </a>
+         </li>
+         <li class="page-item" *ngFor="let item of arrnoOfPages"><a class="page-link"
+               (click)="paginate(item)">{{item}}</a></li>
+         <!-- <li class="page-item"><a class="page-link" (click)="paginate(2)">2</a></li>
+        <li class="page-item"><a class="page-link" (click)="paginate(3)">3</a></li> -->
+         <li class="page-item">
+            <a class="page-link" (click)="nextPag()"  aria-label="Next">
+               <span aria-hidden="true">&raquo;</span>
+               <span class="sr-only">Next</span>
+            </a>
+         </li>
+      </ul>
+   </nav>
+</div>
+<app-footer></app-footer>

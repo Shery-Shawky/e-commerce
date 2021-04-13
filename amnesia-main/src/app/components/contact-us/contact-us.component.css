@@ -1,0 +1,44 @@
+#contact-us{
+    padding-top: 2rem;
+}
+#contact-us .form-group button{
+    background-color: #FFFFFF;
+    outline: none;
+    border: 1px solid #F65B5F;
+    background-image: 
+        linear-gradient(to top, hsl(0, 0%, 100%) 50%, #F65B5F 50%),
+        linear-gradient(to top, #F65B5F 50%, transparent 50%);
+    -webkit-background-clip: text,padding-box;
+    background-clip: text,padding-box;
+    -webkit-text-fill-color: transparent;
+    color: transparent;  
+    background-size: 100% 200%;
+    background-position: top;
+    transition: background-position 0.5s ease-in-out;
+}
+
+
+#contact-us  .form-group button:hover{
+    background-position: bottom;
+}
+
+#contact-us  input,textarea{
+    border: 1px solid #F65B5F;
+}
+
+#contact-us  .input-group span{
+    background-color: #F65B5F ;
+}
+#contact-us  h2{
+    color: #F65B5F;
+    text-align: center;
+    font-size: 2rem;
+}
+#contact-us .col-lg-6{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+/* #contact-us img{
+    width: 60%;
+} */

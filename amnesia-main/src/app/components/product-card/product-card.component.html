@@ -1,0 +1,33 @@
+<div class="card py-2 rounded-0 border-0" (mouseenter)="appear()" (mouseleave) ="disappear()"  >
+    <div [class]="classOfStatus">{{status}}</div>
+    <div [class]="fav">
+      <fa-icon [icon]="faHeart" (click)="changeHeartColor(_id)" class="vertical" size="2x" [styles]="{'color': heartIcon}" pull="right"></fa-icon>
+    </div>
+    <div [class]="options">
+      <button (click)="gotoProdInfo()" mat-raised-button color="warn">{{'prodCard.knowMoreBtn' | translate}}</button>
+    </div>
+    <!-- <img [src]="image" class="card-img-top border-1" alt="..."> -->
+    <!-- <img src="https://media.allure.com/photos/5c1933c41f198f2c6627f8c8/1:1/w_400%2Cc_limit/tatcha-violet-c-serum.jpg" class="card-img-top border-1" alt="..."> -->
+    <img [src]="image" class="img-fluid" >
+    <div class="card-body">
+      <h5 class="card-title text-center">{{product_name}}</h5>
+      <div class="text-left my-2">
+        <fa-icon [icon]="faStar" size="lg" [styles]="{'color': star[0]}"></fa-icon>
+        <fa-icon [icon]="faStar" size="lg" [styles]="{'color': star[1]}"></fa-icon>
+        <fa-icon [icon]="faStar" size="lg" [styles]="{'color': star[2]}"></fa-icon>
+        <fa-icon [icon]="faStar" size="lg" [styles]="{'color': star[3]}"></fa-icon>
+        <fa-icon [icon]="faStar" size="lg" [styles]="{'color': star[4]}"></fa-icon>
+      </div>
+      
+      <p class="card-text text-left">
+        <span class="current-price d-block">${{current_price}}</span>
+        <span class="old-price d-block">${{old_price}}</span>
+      </p>
+      <div (click)="addToCart($event,_id)" class="container text-center d-flex align-items-center text-nowrap py-2 px-1 button_slide slide_right">
+        <span class="d-inline-block mr-1">
+          <fa-icon [icon]="faCartPlus" size="lg" [styles]="{'color': 'white'}" pull="right"></fa-icon> 
+        </span>
+        <span class="d-inline-block pt-1" >{{addToCartBtn}}</span> 
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,278 @@
+<section id="hero">
+  <div class="container-fluid mb-4">
+    <div class="row">
+      <div class="col-md-6 header">
+        <p class="pb-2">{{ "welcome.slogan" | translate }}</p>
+        <h3 class="webapp-title">Amnesia</h3>
+        <button
+          (click)="shopnow()"
+          type="button"
+          class="btn btn-primary rounded-0"
+        >
+          {{ "home.shopnow" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- product sale -->
+<section id="feature-product">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>
+          {{ "home.products" | translate }}
+          <b>{{ "home.sales" | translate }}</b>
+        </h2>
+        <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0"> -->
+        <!-- Wrapper for carousel items -->
+        <!-- <div class="carousel-inner">
+            <div class="carousel-item active"> -->
+        <div class="row">
+          <carousel
+            autoplay="true"
+            pauseOnHover="true"
+            *ngIf="!isFetching"
+            id="product"
+            loop="true"
+            dots="true"
+            transitionDuration="200"
+          >
+            <div
+              *ngFor="let product of products; index as i"
+              class="carousel-cell"
+            >
+              <!-- <div class="classOfStatus">Sale</div> -->
+              <img class="sale" src="../../../assets/images/sale2.png" alt="" />
+              <div class="thumb-wrapper active">
+                <div class="img-box">
+                  <img
+                    class="proImg"
+                    src="https://amnesia-skincare.herokuapp.com/api/images/show/{{
+                      product.image
+                    }}"
+                    alt="productImg"
+                  />
+                </div>
+                <div class="thumb-content">
+                  <h4>{{ product.name }}</h4>
+                  <p class="item-price">
+                    <span class="oldPrice">${{ product.old_price }}</span>
+                    <span class="newPrice">${{ product.current_price }}</span>
+                  </p>
+                  <a class="btn rounded-0" (click)="productDetails(product._id)"
+                    >{{'product.MoreDetails' | translate}}</a
+                  >
+                </div>
+              </div>
+            </div>
+          </carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- about us -->
+<!-- <div id="aboutUs" style="min-height:50px;">
+</div> -->
+<!-- about us -->
+<div id="aboutUs"></div>
+<section id="about">
+  <div class="about">
+    <h2>About Us</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 im"></div>
+        <div class="col-lg-6">
+          <p>‘Amnesia’ {{ "home.aboutusTitle" | translate }}</p>
+          <span
+            ><i class="far fa-check-circle"></i
+            >{{ "home.aboutus1" | translate }}
+          </span>
+          <span
+            ><i class="far fa-check-circle"></i>
+            {{ "home.shopnow2" | translate }}
+          </span>
+          <span
+            ><i class="far fa-check-circle"></i>
+            {{ "home.shopnow3" | translate }}
+          </span>
+          <span
+            ><i class="far fa-check-circle"></i>
+            {{ "home.shopnow4" | translate }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- our team -->
+<section id="team">
+  <h2>{{ "home.ourProfessionalTeam" | translate }}</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <img src="../../assets/FA0A8855.JPG" width="200px" height="200px" />
+        <h4>Asmaa Mohamed</h4>
+        <h5>Front End Developer</h5>
+        <p>member of team</p>
+        <ul>
+          <li><i class="fab fa-facebook-f"></i></li>
+          <li><i class="fab fa-twitter"></i></li>
+          <li><i class="fab fa-linkedin-in"></i></li>
+          <li><i class="fab fa-instagram"></i></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <img src="../../assets/FA0A8855.JPG" width="200px" height="200px" />
+        <h4>Asmaa Mohamed</h4>
+        <h5>Front End Developer</h5>
+        <p>member of team</p>
+        <ul>
+          <li><i class="fab fa-facebook-f"></i></li>
+          <li><i class="fab fa-twitter"></i></li>
+          <li><i class="fab fa-linkedin-in"></i></li>
+          <li><i class="fab fa-instagram"></i></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <img src="../../assets/FA0A8855.JPG" width="200px" height="200px" />
+        <h4>Asmaa Mohamed</h4>
+        <h5>Front End Developer</h5>
+        <p>member of team</p>
+        <ul>
+          <li><i class="fab fa-facebook-f"></i></li>
+          <li><i class="fab fa-twitter"></i></li>
+          <li><i class="fab fa-linkedin-in"></i></li>
+          <li><i class="fab fa-instagram"></i></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <img src="../../assets/FA0A8855.JPG" width="200px" height="200px" />
+        <h4>Asmaa Mohamed</h4>
+        <h5>Front End Developer</h5>
+        <p>member of team</p>
+        <ul>
+          <li><i class="fab fa-facebook-f"></i></li>
+          <li><i class="fab fa-twitter"></i></li>
+          <li><i class="fab fa-linkedin-in"></i></li>
+          <li><i class="fab fa-instagram"></i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- scroll -->
+<!-- <a id="scrollUp" href="#hero" style="display: block; position: fixed; " (click)="topFunction()"><i
+    class="fa fa-angle-up"></i></a> -->
+
+<!-- ourclient -->
+<section id="clients">
+  <div class="client">
+    <h2>{{ "home.testiOfClients" | translate }}</h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div
+          id="carouselExampleSlidesOnly"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <i class="fas fa-quote-right"></i>
+              <p>
+                Curabitur mollis bibendum luctus. Duis suscipit vitae dui sed
+                suscipit. Vestibulum auctor nunc vitae diam eleifend, in maximus
+                metus sollicitudin. Quisque vitae sodales lectus. Nam porttitor
+                justo sed mi finibus, vel tristique risus faucibus.
+              </p>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-2">
+                    <img src="../../../assets/images/testimonial-1.jpg" />
+                  </div>
+                  <div class="col-lg-9 offset-lg-1 info">
+                    <h6>Janey Williams</h6>
+                    <span>Sales Executive</span>
+                    <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <i class="fas fa-quote-right"></i>
+              <p>
+                Curabitur mollis bibendum luctus. Duis suscipit vitae dui sed
+                suscipit. Vestibulum auctor nunc vitae diam eleifend, in maximus
+                metus sollicitudin. Quisque vitae sodales lectus. Nam porttitor
+                justo sed mi finibus, vel tristique risus faucibus.
+              </p>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-2">
+                    <img src="../../../assets/images/testimonial-2.jpg" />
+                  </div>
+                  <div class="col-lg-9 offset-lg-1 info">
+                    <h6>Glen Jarret</h6>
+                    <span>HR Manager</span>
+                    <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <i class="fas fa-quote-right"></i>
+              <p>
+                Curabitur mollis bibendum luctus. Duis suscipit vitae dui sed
+                suscipit. Vestibulum auctor nunc vitae diam eleifend, in maximus
+                metus sollicitudin. Quisque vitae sodales lectus. Nam porttitor
+                justo sed mi finibus, vel tristique risus faucibus.
+              </p>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-2">
+                    <img src="../../../assets/images/testimonial-3.jpg" />
+                  </div>
+                  <div class="col-lg-9 offset-lg-1 info">
+                    <h6>Kate Lawrence</h6>
+                    <span>Photographer</span>
+                    <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-contact-us></app-contact-us>
+
+<app-footer></app-footer>

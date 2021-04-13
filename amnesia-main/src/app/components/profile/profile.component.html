@@ -1,0 +1,57 @@
+<section id="profile">
+    <aside>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="img">
+                    <img [src]='userimg'>
+                </div>
+                <div class="name">
+                    <p>{{userFn}} {{userLn}}</p>
+                </div>
+                <div class="lists">
+                    <ul>
+                        <!-- <li class="active" [routerLink]="['/profileEdit']" ><i class="fa fa-user"></i> Edit Account</li> -->
+                        <li (click)="onClick(1)" [ngClass]="{'active': tab==='tab1'}"><i class="fa fa-user"></i> Edit Account</li>
+                        <li (click)="onClick(2)" [ngClass]="{'active': tab==='tab2'}"><i class="fas fa-shopping-cart"></i> Orders</li>
+                        <!-- <li (click)="onClick(3)" [ngClass]="{'active': tab==='tab3'}"><i class="fas fa-sign-out-alt"></i> Log Out</li> -->
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </aside>
+    <div class="container">
+        <app-profile-edit id="profile-edit"></app-profile-edit>
+        <app-profile-orders id="profile-orders"></app-profile-orders>
+        <app-profile-order-detail id="profile-order-details"></app-profile-order-detail>
+    </div>
+</section>
+
+
+
+<!-- <section id="profile">
+    <aside>
+        <div class="img">
+            <img src="../../../assets/images/user3.jpg">
+        </div>
+        <div class="name">
+            <p>Menna Omar</p>
+        </div>
+        <div class="lists">
+            <ul>
+                <li class="active"><i class="fa fa-user"></i> Edit Account</li>
+                <li><i class="fas fa-shopping-cart"></i> Orders</li>
+                <li><i class="fas fa-sign-out-alt"></i> Log Out</li>
+            </ul>
+        </div>
+    </aside>
+    <div class="container">
+        <app-profile-edit></app-profile-edit>
+        <app-profile-orders></app-profile-orders>
+        <app-profile-order-detail></app-profile-order-detail>
+    </div>
+</section> -->

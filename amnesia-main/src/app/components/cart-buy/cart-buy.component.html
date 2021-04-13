@@ -1,0 +1,129 @@
+<section id="cart-buy">
+    <div class="cart-buy2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <form [formGroup]="myForm" id="formBuy">
+                        <h2>{{'cartBuy.orderDetails' | translate}}</h2>
+                        <!-- firstname -->
+                        <div class="form-group">
+                            <input type="text" class="form-control"
+                                
+                                id="firstname" placeholder="First name" name="firstname" formControlName="firstname"
+                                required>
+                            <div *ngIf="myForm.controls.firstname.errors && myForm.controls.firstname.touched" class="error text-danger">
+                                <p *ngIf="myForm.controls.firstname.errors.required">{{'cartBuy.NameisRequired' | translate}}</p>
+                                <p *ngIf="myForm.controls.firstname.errors.maxlength">{{'cart.FNamemustbelessthanEightcharacters' | translate}}
+                                </p>
+                                <p *ngIf="myForm.controls.firstname.errors.pattern">{{'cart.Namemustbecharactersonly' | translate}}</p>
+                            </div>
+                        </div>
+                        <!-- lastname -->
+                        <div class="form-group">
+                            <input type="text" class="form-control"
+                                id="lastname"
+                                placeholder="Last name" name="lastname" formControlName="lastname" required>
+                            
+                            <div *ngIf="myForm.controls.lastname.errors && myForm.controls.lastname.touched" class="error text-danger">
+                                <p *ngIf="myForm.controls.lastname.errors.required">{{'cartBuy.LNameisRequired' | translate}}</p>
+                                <p *ngIf="myForm.controls.lastname.errors.maxlength">{{'cart.LNamemustbelessthanEightcharacters' | translate}}
+                                </p>
+                                <p *ngIf="myForm.controls.lastname.errors.pattern">{{'cart.Namemustbecharactersonly' | translate}}</p>
+                            </div>
+                        </div>
+                        <!-- phone -->
+                        <div class="form-group">
+                            <input type="text" class="form-control"
+                                 id="phone"
+                                placeholder="phone" name="phone" formControlName="phone" required>
+                            
+                            <div *ngIf="myForm.controls.phone.errors && myForm.controls.phone.touched" class="error text-danger">
+                                <p *ngIf="myForm.controls.phone.errors.required">{{'cartBuy.phoneisRequired' | translate}}</p>
+                                <!-- <p *ngIf="myForm.controls.phone.errors.pattern">phone must be 11 number</p> -->
+                                <p *ngIf="myForm.controls.phone.errors.pattern">{{'cartBuy.phonemustbenumbersonly' | translate}}</p>
+                            </div>
+                        </div>
+                        <!-- country -->
+                        <div class="form-group">
+                            <input type="country" class="form-control"
+                                id="country" placeholder="country" name="country" formControlName="country" required>
+                           
+                            <div *ngIf="myForm.controls.country.errors && myForm.controls.country.touched" class="error text-danger">
+                                <p *ngIf="myForm.controls.country.errors.required">{{'cartBuy.countryisRequired' | translate}}</p>
+                                <p *ngIf="myForm.controls.country.errors.city">{{'cartBuy.countrymustbecharactersonly' | translate}}</p>
+                            </div>
+                        </div>
+                        <!-- city -->
+                        <div class="form-group">
+                            <input type="city" class="form-control" id="city" placeholder="city" name="city" formControlName="city"
+                                required>
+                            <div *ngIf="myForm.controls.city.errors && myForm.controls.city.touched" class="error text-danger">
+                                <p *ngIf="myForm.controls.city.errors.required">country is Required</p>
+                                <p *ngIf="myForm.controls.city.errors.pattern">city must be characters only</p>
+                            </div>
+                        </div>
+                        <!-- street -->
+                        <div class="form-group">
+                            <input type="text" class="form-control"
+                                 id="street"
+                                placeholder="street" name="street" formControlName="street" required>
+                            <div *ngIf="myForm.controls.street.errors && myForm.controls.street.touched" class="error text-danger">
+                                <p *ngIf="myForm.controls.street.errors.required">street is Required</p>
+                            </div>
+                        </div>
+                        <!-- notes -->
+                        <div class="form-group">
+                            <textarea class="form-control rounded-0"
+                               name="note"
+                                formControlName="note" id="note" rows="3" placeholder="Add note"></textarea>
+                            
+                            <div *ngIf="myForm.controls.note.errors && myForm.controls.note.touched" class="error text-danger">
+                                <p *ngIf="myForm.controls.note.errors.required">note is Required</p>
+                            </div>
+                        </div>
+                        <!-- payment -->
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment" formControlName="payment"
+                                    id="cash" value="cash">
+                                <label class="form-check-label" for="cash"> Cash on deliver</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment" formControlName="payment"
+                                    id="visa" value="visa">
+                                <label class="form-check-label" for="visa"><img src="../../../assets/images/visa.png"
+                                        alt=""></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment" formControlName="payment"
+                                    id="mastercard" value="mastercard">
+                                <label class="form-check-label" for="mastercard"><img
+                                        src="../../../assets/images/master_card.png" alt=""></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment" formControlName="payment"
+                                    id="paypall" value="paypall">
+                                <label class="form-check-label" for="paypall"><img
+                                        src="../../../assets/images/paypal.png" alt=""></label>
+                            </div>
+                        </div>
+                        <!-- alert payment -->
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                            *ngIf="myForm.controls.payment.errors">
+                            You must choose method of payment.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- buy btn -->
+                        <button type="submit" class="btn rounded-0" [disabled]="myForm.invalid" id="buy" (click)="buy()">{{'cartBuy.BuyNow' | translate}}</button>
+                    </form>
+                    <div id='orderSuccess'>
+                        <h2><i class="far fa-check-circle"></i>{{'cartBuy.OrderSentSuccessfully' | translate}}</h2>
+                        <button type="submit" class="btn rounded-0 returnHome" id="buy"  [routerLink]="['/']">{{'cartBuy.GoHome' | translate}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

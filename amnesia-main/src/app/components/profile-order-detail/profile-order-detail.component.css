@@ -1,0 +1,44 @@
+/* material ui */
+.loading{
+    margin: 0 auto;
+}
+.mat-progress-spinner circle, .mat-spinner circle{
+    stroke: #F65B5F;
+}
+
+/* CSS */
+#orderDetail{
+    margin-top: 50px;
+}
+#orderDetail .table td{
+    border-bottom: 1px solid #dee2e6
+}
+#orderDetail h2{
+    color: #F65B5F;
+    margin-bottom: 30px;
+}
+#orderDetail .table2{
+    width: 100%;
+}
+#orderDetail .table2 td{
+    padding: 5px;
+}
+#orderDetail .tdRight{
+    float: right;
+}
+#orderDetail table thead{
+    background-color: #F65B5F;
+    color: #FFFFFF;
+    box-shadow: 5px 5px 5px #95959595;
+}
+/* #orderDetail .table th, .table td {
+    width: 80%;
+} */
+#orderDetail i{
+    color: #F65B5F;
+}
+#orderDetail i:hover{
+    cursor: pointer;
+    margin-left: -20px;
+    transition: ease-in-out .5s;
+}

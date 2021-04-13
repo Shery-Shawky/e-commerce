@@ -1,0 +1,199 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+
+<section id="contact-us">
+  <div class="container">
+    <div class="row" style="margin-bottom: 15px">
+      <div class="col-lg-12">
+        <h2 class="colr">{{ 'contactus.header' | translate }}</h2>
+        <hr />
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <div class="col-md-offset-1" id="box">
+          <form
+            #f="ngForm"
+            class="form-horizontal"
+            name="contactForm"
+            (ngSubmit)="submitContactForm()"
+          >
+            <fieldset>
+              <!-- Form Name -->
+              <!-- Text input fullName-->
+              <div class="form-group">
+                <div
+                  class="col-md-12"
+                  ng-class="{
+                    'has-error': fn.invalid && fn.dirty && fn.touched
+                  }"
+                >
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-user"></i
+                    ></span>
+                    <input
+                      name="first_name"
+                      #fn="ngModel"
+                      pattern="^[a-zA-Z]+"
+                      [(ngModel)]="contactUs.fullname"
+                      [placeholder]="'contact.name' | translate"
+                      class="form-control rounded-0"
+                      type="text"
+                      required
+                    />
+                  </div>
+                  <span
+                    class="help-block"
+                    *ngIf="fn?.value?.length == 0 && fn.touched"
+                    style="color: red"
+                    >{{ 'contactus.usernameReq' | translate }}</span
+                  >
+                </div>
+              </div>
+              <!-- Text input Subject-->
+              <div class="form-group">
+                <div
+                  class="col-md-12"
+                  ng-class="{ 'has-error': f.sn.$invalid && !f.sn.$pristine }"
+                >
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-bookmark"></i
+                    ></span>
+                    <input
+                      name="subject"
+                      #sn="ngModel"
+                      pattern="^[a-zA-Z]+"
+                      [(ngModel)]="contactUs.subject"
+                      placeholder="{{ 'contact.subject' | translate }}"
+                      class="form-control rounded-0"
+                      type="text"
+                      required
+                    />
+                  </div>
+                  <span
+                    class="help-block"
+                    *ngIf="sn?.value?.length == 0 && sn.dirty && sn.touched"
+                    style="color: red"
+                    >{{ 'contactus.subjectReq' | translate }}</span
+                  >
+                </div>
+              </div>
+              <!-- Text input Email-->
+              <div class="form-group">
+                <div
+                  class="col-md-12"
+                  ng-class="{ 'has-error': f.em.$invalid && !f.em.$pristine }"
+                >
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-envelope"></i
+                    ></span>
+                    <input
+                      name="email"
+                      #em="ngModel"
+                      [(ngModel)]="contactUs.email"
+                      [placeholder]="'contact.emailAd' | translate"
+                      class="form-control rounded-0"
+                      type="email"
+                      pattern="^[a-zA-Z]{1}[a-zA-Z0-9.\-_]*@[a-zA-Z]{1}[a-zA-Z.-]*[a-zA-Z]{1}[.][a-zA-Z]{3,}$"
+                      required
+                    />
+                  </div>
+                  <span
+                    style="color: red"
+                    *ngIf="em.invalid && em.dirty && em.touched"
+                  >
+                    {{ 'contactus.emailInV' | translate }}</span
+                  >
+                </div>
+              </div>
+              <!-- Text input phone-->
+              <div
+                class="form-group"
+                ng-class="{
+                  'has-error':
+                    contactForm.phone.$invalid && !contactForm.phone.$pristine
+                }"
+              >
+                <div class="col-md-12">
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-earphone"></i
+                    ></span>
+                    <input
+                      type="text"
+                      #ph="ngModel"
+                      [(ngModel)]="contactUs.phone"
+                      class="form-control rounded-0"
+                      name="phone"
+                      pattern="^[0-9]{11}$"
+                      [placeholder]="'contact.phone' | translate"
+                      required
+                    />
+                  </div>
+                  <span
+                    style="color: red"
+                    *ngIf="ph.invalid && ph.dirty && ph.touched"
+                    >{{ 'contactus.phoneReq' | translate }}</span
+                  >
+                </div>
+              </div>
+
+              <!-- Text input message-->
+              <div
+                class="form-group"
+                ng-class="{
+                  'has-error':
+                    contactForm.comment.$invalid &&
+                    !contactForm.comment.$pristine
+                }"
+              >
+                <div class="col-md-12 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-pencil"></i
+                    ></span>
+                    <textarea
+                      class="form-control rounded-0"
+                      #ms="ngModel"
+                      [(ngModel)]="contactUs.message"
+                      rows="6"
+                      name="comment"
+                      [placeholder]="'contact.message' | translate"
+                      ng-maxlength="255"
+                      ng-minlength="10"
+                      required
+                    ></textarea>
+                  </div>
+                  <span
+                    style="color: red"
+                    *ngIf="ms?.value?.length == 0 && ms.touched"
+                    class="help-block"
+                  >
+                    {{ 'contactus.messageReq' | translate }}</span
+                  >
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-12">
+                  <button
+                    type="submit"
+                    gv
+                    class="btn pull-right rounded-0"
+                    [disabled]="em.invalid"
+                  >
+                    {{ 'contactus.sendBtm' | translate }}
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <img src="../../../assets/images/contact-us.png" alt="" />
+      </div>
+    </div>
+  </div>
+</section>

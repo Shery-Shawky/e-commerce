@@ -1,0 +1,51 @@
+<section id="cart">
+    <div class="container">
+        <div class="row img">
+            <div class="col-lg-12">
+                <!-- <img src="../../../assets/images/cart3.png" alt=""> -->
+                <h2>{{'cart.mycart' | translate}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <!-- table cart -->
+            <div class="col-lg-12 products">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">{{'cart.image' | translate}}</th>
+                            <th scope="col">{{'cart.product' | translate}}</th>
+                            <th scope="col">{{'cart.count' | translate}}</th>
+                            <th scope="col">{{'cart.price' | translate}}</th>
+                            <th scope="col">{{'cart.remove' | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of mycartObj; index as i">
+                            <td ><img [src]="productImgoArr[i]"></td>
+                            <td>{{mycartObj[i].name}}</td>
+                            <td> <i class="fas fa-minus" (click)="minus(i,$event)"></i> {{mycartObj[i].quantity}} <i class="fas fa-plus" (click)="add(i,$event)"></i> </td>
+                            <td>{{mycartObj[i].current_price * mycartObj[i].quantity}}</td>
+                            <td><i class="fas fa-trash-alt" (click)="deleteProduct(i,$event)"></i></td>                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <!-- total price -->
+        <div class="row cartInfo">
+            <div class="col-sm-6">
+                <div class="row">
+                    <i class="fas fa-arrow-left">{{'cart.continueShopping' | translate}}</i>
+                </div>
+            </div>
+            <div class="col-sm-6 total">
+                <h4>{{'cart.CartTotalPrice' | translate}}</h4>
+                <p>$ {{totalPrice}}</p>
+                <!-- <button class="btn rounded-0" id="buyNow" (click)="crmOrder()">Confirm Order</button> -->
+                <button class="btn rounded-0" id="buyNow" (click)="goOrder()" >{{'cart.confirmOrder' | translate}}</button>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
